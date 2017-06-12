@@ -3,7 +3,6 @@ package io.happylrd.ivory.pojo;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Set;
 
 @Entity
 public class Student {
@@ -40,9 +39,6 @@ public class Student {
     private LocalDate birthday;
 
     private String avatarUrl;
-
-    @OneToMany(mappedBy = "student")
-    private Set<StudentCourse> studentCourses;
 
     private LocalDateTime createTime;
 
@@ -126,14 +122,6 @@ public class Student {
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
-    }
-
-    public Set<StudentCourse> getStudentCourses() {
-        return studentCourses;
-    }
-
-    public void setStudentCourses(Set<StudentCourse> studentCourses) {
-        this.studentCourses = studentCourses;
     }
 
     public LocalDateTime getCreateTime() {

@@ -2,7 +2,6 @@ package io.happylrd.ivory.pojo;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Set;
 
 @Entity
 public class Course {
@@ -16,9 +15,6 @@ public class Course {
 
     @Column(nullable = false)
     private int period;
-
-    @OneToMany(mappedBy = "course")
-    private Set<StudentCourse> studentCourses;
 
     private LocalDateTime createTime;
 
@@ -46,14 +42,6 @@ public class Course {
 
     public void setPeriod(int period) {
         this.period = period;
-    }
-
-    public Set<StudentCourse> getStudentCourses() {
-        return studentCourses;
-    }
-
-    public void setStudentCourses(Set<StudentCourse> studentCourses) {
-        this.studentCourses = studentCourses;
     }
 
     public LocalDateTime getCreateTime() {
